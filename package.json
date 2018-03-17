@@ -2,22 +2,26 @@
   "name": "my-component",
   "version": "0.0.1",
   "description": "Stencil Component Starter",
-  "main": "dist/mycomponent.js",
-  "types": "dist/types/index.d.ts",
+  "main": "dist/hibiscus.js",
+  "types": "dist/types/components.d.ts",
   "collection": "dist/collection/collection-manifest.json",
   "files": [
     "dist/"
   ],
-  "browser": "dist/mycomponent.js",
+  "browser": "dist/hibiscus.js",
   "scripts": {
-    "build": "stencil build",
-    "dev": "sd concurrent \"stencil build --dev --watch\" \"stencil-dev-server\" ",
+    "build": "npm run build.stencil && npm run svg-to-js && npm run icon-copy",
+    "build.stencil": "stencil build",
+    "dev": "npm run build && sd concurrent \"stencil build --dev --watch\" \"stencil-dev-server\" ",
     "serve": "stencil-dev-server",
+    "icon-copy": "node scripts/copy-svg-to-dist.js",
+    "svg-to-js": "node scripts/svg-to-js.js",
     "start": "npm run dev",
     "test": "jest --no-cache",
     "test.watch": "jest --watch --no-cache"
   },
   "dependencies": {
+    "@ionic/jpml": "0.0.5",
     "@stencil/core": "^0.6.18"
   },
   "devDependencies": {

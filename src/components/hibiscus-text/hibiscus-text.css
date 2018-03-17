@@ -1,0 +1,28 @@
+@keyframes stroke {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+:host {
+  display: block;
+}
+
+:host svg {
+  width: calc(25% - 56px);
+  fill: none;
+  stroke: black;
+  transition: all 1s 3s linear;
+}
+:host svg path {
+  stroke-dasharray: var(--path-length);
+  stroke-dashoffset: var(--path-length);
+}
+:host(.active) svg path {
+  animation: 1s calc(var(--index) * 1s) ease-out stroke forwards;
+}
+
+/* hibiscus-text svg.active {
+  transition: all 1s linear;
+  stroke-dasharray: var(--path-length);
+} */

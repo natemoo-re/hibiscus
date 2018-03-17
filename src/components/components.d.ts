@@ -21,7 +21,7 @@ declare global {
 
 import {
   HibiscusTextComponent as HibiscusText
-} from './components/hibiscus-text/hibiscus-text';
+} from './hibiscus-text/hibiscus-text';
 
 declare global {
   interface HTMLHibiscusTextElement extends HibiscusText, HTMLStencilElement {

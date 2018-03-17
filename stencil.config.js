@@ -1,7 +1,12 @@
 exports.config = {
-  namespace: 'mycomponent',
-  generateDistribution: true,
-  serviceWorker: false
+  namespace: 'hibiscus',
+  generateDistribution: false,
+  generateWWW: true,
+  distDir: 'dist/',
+  srcDir: 'src/',
+  copy: [
+    { src: 'index.html' }
+  ]
 };
 
 exports.devServer = {
